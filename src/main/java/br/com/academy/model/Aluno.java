@@ -2,6 +2,8 @@ package br.com.academy.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,10 +19,12 @@ public class Aluno {
 	@Column(name = "nome")
 	private String nome;
 	@Column(name = "curso")
+	@Enumerated(EnumType.STRING)
 	private Curso curso;
 	@Column(name = "matricula", length = 256)
 	private String matricula;
 	@Column(name = "status")
+	@Enumerated(EnumType.STRING)
 	private Status status;
 	@Column(name = "turno")
 	private String turno;

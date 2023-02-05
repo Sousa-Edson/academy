@@ -72,7 +72,7 @@ a.btn-nav:hover {
 	font-weight: bold;
 }
 
-.btn {
+.btn-home {
 	width: 280px;
 	color: #fff;
 	border-radius: 10px;
@@ -85,7 +85,7 @@ a.btn-nav:hover {
 	padding: 2% 15%;
 }
 
-.btn:hover {
+.btn-home:hover {
 	color: #CE93D8;
 	background-color: rgba(0, 0, 0, 0.5);
 }
