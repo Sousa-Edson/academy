@@ -27,12 +27,16 @@
 					<h5 class="btn btn-home ">CADASTRAR ALUNO</h5>
 				</div>
 				<div class="wm">
-					<h5 class="btn  btn-home ">ENCONTRAR ALUNO</h5>
+					<a th:href="@{/filtro-alunos}">
+						<h5 class="btn  btn-home ">ENCONTRAR ALUNO</h5>
+					</a>
 				</div>
-				<div class="clear"></div>
+				<button type="button" class="clear"></button>
 			</div>
+
 		</div>
 	</section>
+
 
 	<!-- FOOTER  -->
 	<div th:replace="fragmentos/fragmentos::rodape"></div>

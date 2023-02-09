@@ -19,25 +19,51 @@
 			style="background-color: #4527A0">
 			<a class="navbar-brand" th:href="@{/}"> <img alt=""
 				src="/img/education.png" style="height: 80px">
-			</a>
-			<h1>Academy</h1>
+			</a> <a th:href="@{/alunos-adicionados}" style="text-decoration: none;"><h1>Academy</h1></a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse"
 				data-target="#navMobile">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div id="navMobile"
 				class="navbar-collapse collapse justify-content-end ">
-				<a th:href="@{/}" class="btn-nav nav-item nav-link"> <i class="fas fa-home"></i>
-					HOME
-				</a> <a class="btn-nav  nav-item nav-link" th:href="@{/inserirAluno}"> <i
-					class="fas fa-user-graduate"></i> CADASTRAR ALUNO
-				</a> <a class="btn-nav nav-item nav-link"> <i class="fas fa-search"></i>
-					PESQUISAR ALUNO
+				<a th:href="@{/}" class="btn-nav nav-item nav-link"> <i
+					class="fas fa-home"></i> HOME
+				</a> <a class="btn-nav  nav-item nav-link" th:href="@{/inserirAluno}">
+					<i class="fas fa-user-graduate"></i> CADASTRAR ALUNO
+				</a> <a class="btn-nav nav-item nav-link" data-toggle="modal"
+					th:href="@{/}" data-target="#modalPesquisa"> <i
+					class="fas fa-search"></i> PESQUISAR ALUNO
 				</a> <a class="btn-nav nav-item nav-link btn-danger"> <i
 					class="fas fa-times"></i> SAIR
 				</a>
 			</div>
 		</nav>
+		<!-- 	Inicio modal -->
+		<div class="modal fade" id="modalPesquisa">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Encontre um aluno</h5>
+						<button class="close" data-dismiss="modal">
+							<span>&times;</span>
+						</button>
+					</div>
+					<form action="pesquisar-aluno" method="post">
+						<!-- 					th:object="${aluno}" -->
+						<div class="modal-body">
+							<input type="text" name="nome" class="form-control"
+								autofocus="autofocus">
+							<!-- 							th:field="*{nome}" -->
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-danger" data-dismiss="modal">Fechar</button>
+							<button type="submit" class="btn btn-success">Pesquisar</button>
+
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
 	</header>
 
 

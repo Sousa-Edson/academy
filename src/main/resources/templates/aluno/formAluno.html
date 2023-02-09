@@ -20,10 +20,16 @@
 		<h4>+ Inserir Alunos</h4>
 		<hr>
 		<br>
+
 		<form method="post" action="/InsertAlunos" th:object="${aluno}"
 			autocomplete="off">
 			<div class="row">
+
 				<div class="col-md-6  form-group offset-md-3">
+					<div class="alert alert-danger" role="alert"
+						th:if="${#fields.hasErrors('nome')}">
+						<label class="validation-message" th:errors="*{nome}"></label>
+					</div>
 					<label>Nome do aluno:</label> <input class="form-control"
 						type="text" placeholder="Ex. João Maria" th:field="*{nome}">
 				</div>
@@ -31,6 +37,10 @@
 			<!-- 			curso -->
 			<div class="row">
 				<div class="col-md-6  form-group offset-md-3">
+					<div class="alert alert-danger" role="alert"
+						th:if="${#fields.hasErrors('curso')}">
+						<label class="validation-message" th:errors="*{curso}"></label>
+					</div>
 					<label>Selecione o curso</label> <select class="form-control"
 						th:field="*{curso}">
 						<option
@@ -42,6 +52,10 @@
 			<!-- 			matricula -->
 			<div class="row">
 				<div class="col-md-6  form-group offset-md-3">
+					<div class="alert alert-danger" role="alert"
+						th:if="${#fields.hasErrors('matricula')}">
+						<label class="validation-message" th:errors="*{matricula}"></label>
+					</div>
 					<label>Gerar Matricula:</label> <input id="matricula"
 						class="form-control" type="text" th:field="*{matricula}">
 					<button type="button" onclick="GerarMatricula();"
@@ -51,6 +65,10 @@
 			<!-- 			status -->
 			<div class="row">
 				<div class="col-md-6  form-group offset-md-3">
+					<div class="alert alert-danger" role="alert"
+						th:if="${#fields.hasErrors('status')}">
+						<label class="validation-message" th:errors="*{status}"></label>
+					</div>
 					<label>Selecione o status</label> <select class="form-control"
 						th:field="*{status}">
 						<option
@@ -62,6 +80,10 @@
 			<!-- 			turno -->
 			<div class="row">
 				<div class="col-md-6  form-group offset-md-3">
+					<div class="alert alert-danger" role="alert"
+						th:if="${#fields.hasErrors('turno')}">
+						<label class="validation-message" th:errors="*{turno}"></label>
+					</div>
 					<label>Turno:</label> <input class="form-control" type="text"
 						placeholder="Manha" th:field="*{turno}">
 				</div>
